@@ -10,16 +10,24 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import TextField from "@mui/material/TextField";
+import { padding } from "@mui/system";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 export default function () {
   const [open, setOpen] = React.useState(false);
+  const [ope, setOpe] = React.useState(false);
   const handleClick = () => {
     setOpen(true);
   };
-
+  const handleClick3 = () => {
+    setOpe(true);
+    setTimeout(() => {
+      setOpe(false);
+    }, 2000);
+  };
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
@@ -36,10 +44,9 @@ export default function () {
 
   const handleClose1 = () => {
     setOpen1(false);
+    handleClick3();
   };
-  const handleClose2 = () => {
-    setOpen1(false);
-  };
+
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <div style={{ width: "100%" }}>
@@ -123,7 +130,7 @@ export default function () {
                 color="success"
                 onClick={handleClickOpen}
               >
-                Login
+                Register
               </Button>
               <Dialog
                 open={open1}
@@ -132,22 +139,105 @@ export default function () {
                 aria-describedby="alert-dialog-description"
               >
                 <DialogTitle id="alert-dialog-title">
-                  {"Registration Confirm Message"}
+                  {"Registration-  Step 2"}
                 </DialogTitle>
                 <DialogContent>
+                  <div
+                    style={{
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      textAlign: "center",
+                    }}
+                  >
+                    Contact Details
+                    <br />
+                    <TextField
+                      disabled
+                      id="filled-basic"
+                      label="0771461925"
+                      variant="filled"
+                      style={{ margin: "6px" }}
+                    />
+                    <span
+                      style={{
+                        color: "green",
+                        padding: "5px",
+                        paddingTop: "15px",
+                      }}
+                    >
+                      Varified !
+                    </span>
+                    <br />
+                    Owner Details
+                    <br />
+                    <TextField
+                      required
+                      id="filled-basic"
+                      label="First Name"
+                      variant="filled"
+                      style={{ margin: "6px" }}
+                    />
+                    <TextField
+                      required
+                      id="filled-basic"
+                      label="Last Name"
+                      variant="filled"
+                      style={{ margin: "6px" }}
+                    />
+                    <br />
+                    <TextField
+                      required
+                      id="filled-basic"
+                      label="Licene No"
+                      variant="filled"
+                      // placeholder="1234"
+                      style={{ margin: "6px" }}
+                    />
+                    <br />
+                    Vehicle Details
+                    <br />
+                    <TextField
+                      required
+                      id="filled-basic"
+                      label="Vehicle No"
+                      variant="filled"
+                      placeholder="ABC"
+                      style={{ margin: "6px" }}
+                    />
+                    <TextField
+                      required
+                      id="filled-basic"
+                      label="Vehicle No"
+                      variant="filled"
+                      placeholder="1234"
+                      style={{ margin: "6px" }}
+                    />
+                    <br />
+                  </div>
                   <DialogContentText id="alert-dialog-description">
-                    We are happy to say that you have registed for the Fuel
-                    Refil System Succesfully. You can login to the system by
-                    using the bellow <u>Login</u> link
+                    Register the details added.
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
                   {/* <Button onClick={handleClose2} autoFocus>
                     Login
                   </Button> */}
-                  <Button onClick={handleClose1}>Dismiss</Button>
+                  <Button onClick={handleClose1}>register</Button>
                 </DialogActions>
               </Dialog>
+              <Snackbar
+                open={ope}
+                autoHideDuration={6000}
+                onClose={handleClose}
+              >
+                <Alert
+                  onClose={handleClose}
+                  severity="success"
+                  sx={{ width: "100%" }}
+                >
+                  You Have registed
+                </Alert>
+              </Snackbar>
             </div>
           </div>
         </div>
