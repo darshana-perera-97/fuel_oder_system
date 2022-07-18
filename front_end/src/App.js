@@ -1,7 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import Design from "./Design/Design";
-import LoadingSc from "./Design/LoadingSc/LoadingSc";
 
 function App() {
   return (
@@ -22,8 +21,8 @@ function App() {
     //   </header>
     // </div>
     <div>
-      {/* <Design /> */}
-      <LoadingSc />
+      <Design />
+      {/* <LoadingSc /> */}
     </div>
   );
 }
