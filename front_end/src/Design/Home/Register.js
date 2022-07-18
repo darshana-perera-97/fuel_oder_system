@@ -5,6 +5,11 @@ import InputLabel from "@mui/material/InputLabel";
 import Input from "@mui/material/Input";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -21,6 +26,19 @@ export default function () {
     }
 
     setOpen(false);
+  };
+
+  const [open1, setOpen1] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen1(true);
+  };
+
+  const handleClose1 = () => {
+    setOpen1(false);
+  };
+  const handleClose2 = () => {
+    setOpen1(false);
   };
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -100,9 +118,36 @@ export default function () {
                 textAlign: "center",
               }}
             >
-              <Button variant="contained" color="success">
-                Register !
+              <Button
+                variant="contained"
+                color="success"
+                onClick={handleClickOpen}
+              >
+                Login
               </Button>
+              <Dialog
+                open={open1}
+                onClose={handleClose1}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  {"Registration Confirm Message"}
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                    We are happy to say that you have registed for the Fuel
+                    Refil System Succesfully. You can login to the system by
+                    using the bellow <u>Login</u> link
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  {/* <Button onClick={handleClose2} autoFocus>
+                    Login
+                  </Button> */}
+                  <Button onClick={handleClose1}>Dismiss</Button>
+                </DialogActions>
+              </Dialog>
             </div>
           </div>
         </div>

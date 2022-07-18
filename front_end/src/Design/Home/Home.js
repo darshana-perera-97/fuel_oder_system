@@ -13,9 +13,11 @@ export default function Home() {
           //   width: "163.6vh",
           height: "75vh",
           marginTop: "10vh",
-          marginLeft: "21.8vh",
+          // marginLeft: "21.8vh",
           borderRadius: "30px",
           padding: "20px",
+          marginLeft: "auto",
+          marginRight: "auto",
         }}
       >
         <p
