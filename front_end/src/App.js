@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import Des from "./Design/Des";
 import Design from "./Design/Design";
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
     //   </header>
     // </div>
     <div>
-      <Design />
-      {/* <LoadingSc /> */}
+      {/* <Design />
+      <LoadingSc /> */}
+      <Des />
     </div>
   );
 }

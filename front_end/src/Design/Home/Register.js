@@ -12,6 +12,8 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import TextField from "@mui/material/TextField";
 import { padding } from "@mui/system";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
@@ -213,6 +215,25 @@ export default function () {
                       style={{ margin: "6px" }}
                     />
                     <br />
+                    <FormControl
+                      variant="standard"
+                      sx={{ m: 1, minWidth: 120 }}
+                    >
+                      <InputLabel id="demo-simple-select-standard-label">
+                        Fuel Type
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-standard-label"
+                        id="demo-simple-select-standard"
+                        // value={age}
+                        // onChange={handleChange}
+                        label="Fuel Type"
+                      >
+                        <MenuItem value={10}>Petrol</MenuItem>
+                        <MenuItem value={20}>Diesel</MenuItem>
+                        {/* <MenuItem value={30}>Thirty</MenuItem> */}
+                      </Select>
+                    </FormControl>
                   </div>
                   <DialogContentText id="alert-dialog-description">
                     Register the details added.

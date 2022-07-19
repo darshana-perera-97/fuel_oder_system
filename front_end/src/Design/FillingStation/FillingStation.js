@@ -26,7 +26,7 @@ export default function FillingStation() {
           width: "120vh",
           //   width: "163.6vh",
           height: "75vh",
-          marginTop: "10vh",
+          marginTop: "5vh",
           // marginLeft: "21.8vh",
           borderRadius: "30px",
           padding: "20px",
@@ -65,6 +65,7 @@ export default function FillingStation() {
             textAlign: "center",
             borderRadius: "20px",
             padding: "30px",
+            height:"50%"
           }}
         >
           {d && (
@@ -97,18 +98,22 @@ export default function FillingStation() {
               Login
             </Button>
           )}
-          <div style={{ margin: "0px" }}>
-            {!d && (
-              <QrScan
-                delay={300}
-                onError={handleError}
-                onScan={handleScan}
-                style={{ height: 200, width: 250 }}
-              />
-            )}
-          </div>
-          {!d && <p style={{ margin: "0px" }}>{qrscan}</p>}
-          {!d && <p style={{ margin: "0px", color: "green" }}>{qrscan2}</p>}
+          <diV style={{ display: "flex" }}>
+            <div style={{ margin: "0px" }}>
+              {!d && (
+                <QrScan
+                  delay={300}
+                  onError={handleError}
+                  onScan={handleScan}
+                  style={{ height: 200, width: 250 }}
+                />
+              )}
+            </div>
+            <div style={{ marginLeft: "20px" }}>
+              {!d && <p style={{ margin: "0px" }}>{qrscan}</p>}
+              {!d && <p style={{ margin: "0px", color: "green" }}>{qrscan2}</p>}
+            </div>
+          </diV>
         </div>
       </div>
     </div>

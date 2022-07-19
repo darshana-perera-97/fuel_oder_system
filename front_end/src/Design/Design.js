@@ -9,7 +9,7 @@ export default function Design() {
     <div>
       {/* <LoadingSc /> */}
       {s && <Home />}
-      {!s &&<FillingStation/>}
+      {!s && <FillingStation />}
       <div
         style={{
           marginLeft: "auto",
@@ -18,20 +18,23 @@ export default function Design() {
           marginTop: "10px",
         }}
       >
-        {s && <button
-          style={{
-            background: "#16182c",
-            padding: "7px 10px",
-            textAlign: "center",
-            borderRadius: "12pxF",
-            color: "white",
-          }}
-          onClick={()=>{
-            setS(false)
-          }}
-        >
-          Login As ADMIN
-        </button>}
+        {s && (
+          <button
+            style={{
+              background: "#16182c",
+              padding: "7px 10px",
+              textAlign: "center",
+              borderRadius: "12pxF",
+              color: "white",
+              narginBottom: "5vh",
+            }}
+            onClick={() => {
+              setS(false);
+            }}
+          >
+            Login As ADMIN
+          </button>
+        )}
       </div>
     </div>
   );

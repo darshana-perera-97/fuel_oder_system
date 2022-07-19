@@ -12,7 +12,7 @@ export default function Home() {
           width: "120vh",
           //   width: "163.6vh",
           height: "75vh",
-          marginTop: "10vh",
+          marginTop: "5vh",
           // marginLeft: "21.8vh",
           borderRadius: "30px",
           padding: "20px",
